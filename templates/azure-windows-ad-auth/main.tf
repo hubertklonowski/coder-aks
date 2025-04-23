@@ -73,8 +73,8 @@ resource "random_string" "computer_name" {
 
 locals {
   prefix              = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
-  resource_group_name = "MC_eric-rg_eric-cluster_eastus2"
-  subnet_id           = "/subscriptions/05e8b285-4ce1-46a3-b4c9-f51ba67d6acc/resourceGroups/MC_eric-rg_eric-cluster_eastus2/providers/Microsoft.Network/virtualNetworks/aks-vnet-94756878/subnets/aks-subnet"
+  resource_group_name = "MC_swo-rg_swo-cluster_eastus2"
+  subnet_id           = "/subscriptions/05e8b285-4ce1-46a3-b4c9-f51ba67d6acc/resourceGroups/MC_swo-rg_swo-cluster_eastus2/providers/Microsoft.Network/virtualNetworks/aks-vnet-94756878/subnets/aks-subnet"
 
   admin_username = "coder"
 }

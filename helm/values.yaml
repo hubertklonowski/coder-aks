@@ -14,7 +14,7 @@ coder:
 
   # user-assigned managed identity used for authenticating Terraform to Azure
   podLabels:
-    aadpodidbinding: eric-cluster-pod-identity
+    aadpodidbinding: swo-cluster-pod-identity
   service:
     enable: true
   tls:
@@ -33,16 +33,16 @@ coder:
   - name: gcp-service-account-key
     secret:
       secretName: gcp-service-account-key
-  - name: eric-ca
+  - name: swo-ca
     secret:
-      secretName: eric-ca
+      secretName: swo-ca
       items:
-      - key: eric-ca.pem
-        path: eric-ca.pem
+      - key: swo-ca.pem
+        path: swo-ca.pem
   volumeMounts:
-  - name: eric-ca
-    mountPath: /etc/ssl/certs/eric-ca.pem
-    subPath: eric-ca.pem
+  - name: swo-ca
+    mountPath: /etc/ssl/certs/swo-ca.pem
+    subPath: swo-ca.pem
     readOnly: true
   - name: gke-kubeconfig
     mountPath: /var/secrets/gke
@@ -51,13 +51,13 @@ coder:
     mountPath: /var/secrets/gcp
     readOnly: true
 
-# Coder configuration
+  # Coder configuration
   env:
   # DNS configuration
   - name: CODER_ACCESS_URL
-    value: https://eric-aks.demo.coder.com
+    value: https://swo-aks.demo.coder.com
   - name: CODER_WILDCARD_ACCESS_URL
-    value: '*.eric-aks.demo.coder.com'
+    value: '*.swo-aks.demo.coder.com'
 
   # database configuration
   - name: CODER_PG_CONNECTION_URL
@@ -187,10 +187,8 @@ coder:
     value: "true"
   - name: CODER_SUPPORT_LINKS
     value: >
-      [{"name": "GitHub", "target": "https://github.com/coder/coder",
-      "icon": "/icon/github.svg"},
+      [{"name": "GitHub", "target": "https://github.com/coder/coder", "icon": "/icon/github.svg"},
        {"name": "Slack", "target":
-      "https://codercom.slack.com", "icon":
-      "/icon/slack.svg"},
+      "https://codercom.slack.com", "icon": "/icon/slack.svg"},
        {"name": "Discord", "target": "https://discord.gg/coder", "icon":
       "/icon/discord.svg"}]

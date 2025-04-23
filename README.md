@@ -16,7 +16,7 @@ typically include:
 application. In-line comments provide context on the various sections
 and environment variables. A few things to note:
 
-- Primary endpoint is `eric-aks.demo.coder.com`, pointing to an Azure Load Balancer
+- Primary endpoint is `swo-aks.demo.coder.com`, pointing to an Azure Load Balancer
 - Coder image is `ericpaulsen/coder-{latest-version}:multi-cloud`, which includes `az` & `gcloud` CLIs
 - GCP, GKE service account key and `kubeconfig` is mounted into the Coder pod
 - GitHub, GitLab, and JFrog Artifactory integrations enable access from Coder workspaces
@@ -43,6 +43,6 @@ Templates are pushed into Coder on each commit via GitHub Actions configured in
 changes into Coder via the below commands:
 
 ```fish
-coder login https://eric-aks.demo.coder.com
+coder login https://swo-aks.demo.coder.com
 coder templates push <template-name>
 ```

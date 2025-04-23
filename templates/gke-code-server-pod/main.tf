@@ -255,7 +255,7 @@ resource "kubernetes_pod" "main" {
   ]
   metadata {
     name      = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
-    namespace = "eric-oss"
+    namespace = "swo-oss"
   }
   spec {
     security_context {
@@ -301,7 +301,7 @@ resource "kubernetes_pod" "main" {
 resource "kubernetes_persistent_volume_claim" "home-directory" {
   metadata {
     name      = "home-coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
-    namespace = "eric-oss"
+    namespace = "swo-oss"
   }
   wait_until_bound = false
   spec {

@@ -27,7 +27,7 @@ jobs:
           with:
             id: code-server-pod
             dir: templates/code-server-pod
-            url: https://eric-aks.demo.coder.com
+            url: https://swo-aks.demo.coder.com
             name: ${{ steps.latest_commit.outputs.hash }}
             message: ${{ steps.commit_title.outputs.title }}
             coder_session_token: ${{ secrets.CODER_SESSION_TOKEN }}
